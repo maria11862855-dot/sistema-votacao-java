@@ -33,7 +33,7 @@ public class SistemaDeVotacao {
 
             switch (opcao) {
                 case 1:
-                    System.out.println("Cadastro selecionado.");
+                    cadastrarCandidatos();
                     break;
                 case 2:
                     System.out.println("Votação selecionada.");
@@ -69,4 +69,24 @@ public class SistemaDeVotacao {
             scanner.nextLine();
         }
     }
+
+    static void cadastrarCandidatos() {
+        if (quantidadeCandidatos > 0) {
+            System.out.println("Os candidatos já foram cadastrados.");
+            return;
+        }
+
+        int quantidade;
+
+        do {
+            quantidade = lerInteiro(
+                    "Quantidade de candidatos entre 1 e 5: "
+            );
+
+            if (quantidade < 1 || quantidade > MAX_CANDIDATOS) {
+                System.out.println("Quantidade inválida.");
+            }
+        } while (quantidade < 1 || quantidade > MAX_CANDIDATOS);
+    }
+
 }

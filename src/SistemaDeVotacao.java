@@ -163,8 +163,6 @@ public class SistemaDeVotacao {
     }
 
 
-
-
     static int buscarCandidato(int numero) {
 
 
@@ -187,6 +185,7 @@ public class SistemaDeVotacao {
 
         return indiceEncontrado;
     }
+
     static void mostrarCandidatos() {
 
 
@@ -207,6 +206,7 @@ public class SistemaDeVotacao {
             );
         }
     }
+
     static void iniciarVotacao() {
 
 
@@ -243,8 +243,6 @@ public class SistemaDeVotacao {
                 || turma > TOTAL_TURMAS);
 
 
-
-
         int indiceTurma = turma - 1;
         if (quantidadeVotosTurma[indiceTurma]
                 >= MAX_VOTANTES_POR_TURMA) {
@@ -265,8 +263,6 @@ public class SistemaDeVotacao {
         );
 
 
-
-
         while (quantidadeVotosTurma[indiceTurma]
                 < MAX_VOTANTES_POR_TURMA) {
 
@@ -274,8 +270,6 @@ public class SistemaDeVotacao {
             int numero = lerInteiro(
                     "\nNúmero do candidato: "
             );
-
-
 
 
             if (numero == 0) {
@@ -290,12 +284,8 @@ public class SistemaDeVotacao {
             }
 
 
-
-
             int indiceCandidato =
                     buscarCandidato(numero);
-
-
 
 
             if (indiceCandidato == -1) {
@@ -308,8 +298,6 @@ public class SistemaDeVotacao {
 
                 continue;
             }
-
-
 
 
             int posicaoVoto =
@@ -326,14 +314,10 @@ public class SistemaDeVotacao {
             votosCandidatos[indiceCandidato]++;
 
 
-
-
             System.out.println(
                     "Voto registrado com sucesso."
             );
         }
-
-
 
 
         if (quantidadeVotosTurma[indiceTurma]
@@ -346,8 +330,62 @@ public class SistemaDeVotacao {
         }
     }
 
+    static void exibirMatrizVotos() {
 
+
+        System.out.println(
+                "\n===== MATRIZ DE VOTOS ====="
+        );
+
+
+        for (int i = 0;
+             i < TOTAL_TURMAS;
+             i++) {
+
+
+            System.out.print(
+                    "Turma " + (i + 1) + ": "
+            );
+
+
+            for (int j = 0;
+                 j < MAX_VOTANTES_POR_TURMA;
+                 j++) {
+
+
+                if (j < quantidadeVotosTurma[i]) {
+
+
+                    System.out.print(
+                            votosPorTurma[i][j] + " "
+                    );
+
+
+                } else {
+
+
+                    System.out.print("- ");
+                }
+            }
+
+
+            System.out.println();
+        }
+    }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

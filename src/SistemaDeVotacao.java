@@ -444,6 +444,76 @@ public class SistemaDeVotacao {
                         votosCandidatos[i];
             }
         }
+        int quantidadeVencedores = 0;
+
+
+
+
+        for (int i = 0;
+             i < quantidadeCandidatos;
+             i++) {
+
+
+            if (votosCandidatos[i]
+                    == maiorQuantidadeVotos) {
+
+
+                quantidadeVencedores++;
+            }
+        }
+
+
+
+
+        System.out.println();
+
+
+
+
+        if (quantidadeVencedores == 1) {
+
+
+            System.out.print("Vencedor: ");
+
+
+        } else {
+
+
+            System.out.print("Empate entre: ");
+        }
+
+
+
+
+        boolean primeiroNome = true;
+
+
+
+
+        for (int i = 0;
+             i < quantidadeCandidatos;
+             i++) {
+
+
+            if (votosCandidatos[i]
+                    == maiorQuantidadeVotos) {
+
+
+                if (!primeiroNome) {
+
+
+                    System.out.print(", ");
+                }
+
+
+                System.out.print(
+                        nomesCandidatos[i]
+                );
+
+
+                primeiroNome = false;
+            }
+        }
 
     }
 }

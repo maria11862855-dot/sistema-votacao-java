@@ -514,6 +514,26 @@ public class SistemaDeVotacao {
                 primeiroNome = false;
             }
         }
+        System.out.println();
+        switch (opcao) {
+            case 1:
+                cadastrarCandidatos();
+                break;
+            case 2:
+                iniciarVotacao();
+                break;
+            case 3:
+                exibirResultado();
+                break;
+            case 4:
+                exibirMatrizVotos();
+                break;
+            case 5:
+                System.out.println("Sistema encerrado.");
+                break;
+            default:
+                System.out.println("Opção inválida.");
+        }
 
     }
 }

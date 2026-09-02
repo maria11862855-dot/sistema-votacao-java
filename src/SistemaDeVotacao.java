@@ -372,7 +372,42 @@ public class SistemaDeVotacao {
             System.out.println();
         }
     }
+
+
+    static void exibirResultado() {
+
+
+        if (quantidadeCandidatos == 0) {
+
+
+            System.out.println(
+                    "Nenhum candidato foi cadastrado."
+            );
+
+
+            return;
+        }
+
+
+        int totalVotos = 0;
+
+        for (
+                int i = 0;
+                i < quantidadeCandidatos; i++) {
+            totalVotos += votosCandidatos[i];
+        }
+
+        if (totalVotos == 0) {
+            System.out.println("Nenhum voto foi registrado.");
+            return;
+        }
+
+
+    }
 }
+
+
+
 
 
 

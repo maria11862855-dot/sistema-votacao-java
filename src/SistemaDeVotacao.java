@@ -36,16 +36,20 @@ public class SistemaDeVotacao {
                     cadastrarCandidatos();
                     break;
                 case 2:
-                    System.out.println("Votação selecionada.");
+                    iniciarVotacao();
+
                     break;
                 case 3:
-                    System.out.println("Resultado selecionado.");
+                    exibirResultado();
+
                     break;
                 case 4:
-                    System.out.println("Matriz selecionada.");
+                    exibirMatrizVotos();
+
                     break;
                 case 5:
                     System.out.println("Sistema encerrado.");
+
                     break;
                 default:
                     System.out.println("Opção inválida.");
@@ -515,25 +519,6 @@ public class SistemaDeVotacao {
             }
         }
         System.out.println();
-        switch (opcao) {
-            case 1:
-                cadastrarCandidatos();
-                break;
-            case 2:
-                iniciarVotacao();
-                break;
-            case 3:
-                exibirResultado();
-                break;
-            case 4:
-                exibirMatrizVotos();
-                break;
-            case 5:
-                System.out.println("Sistema encerrado.");
-                break;
-            default:
-                System.out.println("Opção inválida.");
-        }
 
     }
 }

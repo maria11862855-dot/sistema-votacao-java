@@ -87,6 +87,50 @@ public class SistemaDeVotacao {
                 System.out.println("Quantidade inválida.");
             }
         } while (quantidade < 1 || quantidade > MAX_CANDIDATOS);
-    }
+        for (int i = 0; i < quantidade; i++) {
 
+
+            int numero;
+
+
+            while (true) {
+
+
+                numero = lerInteiro(
+                        "\nNúmero do candidato "
+                                + (i + 1) + ": "
+                );
+
+
+                if (numero <= 0) {
+
+
+                    System.out.println(
+                            "O número deve ser maior que zero."
+                    );
+
+
+                    continue;
+                }
+
+
+                boolean numeroRepetido = false;
+
+
+                for (int j = 0; j < i; j++) {
+
+
+                    if (numerosCandidatos[j] == numero) {
+
+
+                        numeroRepetido = true;
+                        break;
+                    }
+                }
+
+
+            }
+
+        }
+    }
 }
